@@ -2,5 +2,18 @@
     <h3> Esta es nuestra lista de personas</h3>
 
     <div *ngFor="let persona of personas">
-       <app-persona [persona] = "persona"></app-persona>
+       <app-persona [persona] = "persona"
+       (deletePersona)="borrarPersonaDeLista($event)"
+       (addPersona)="agregarPersonaALaLista($event)">
+       </app-persona>
+    </div>   
+    
+</div>
+
+<div class="agregador">
+    <h3>Formulario de ingreso:</h3>
+    <input type="text"  placeholder="nombre: "  > <br>
+    <input type="text" placeholder="apellido: " > <br>
+    <input type="text" placeholder="edad: "   > <br>
+    <button class="btn btn-primary mb-3" (click)="agregarPersonaALaLista()">Agregar</button>
 </div>

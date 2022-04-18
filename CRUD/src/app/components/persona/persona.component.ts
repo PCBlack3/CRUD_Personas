@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Persona } from 'src/app/models/Persona';
 
 @Component({
@@ -9,6 +9,8 @@ import { Persona } from 'src/app/models/Persona';
 export class PersonaComponent implements OnInit {
 
   @Input() persona: Persona = new Persona();
+  @Output() deletePersona: EventEmitter<Persona> = new EventEmitter();
+  @Output() addPersona: EventEmitter<Persona> = new EventEmitter();
 
   constructor() { }
 
@@ -23,4 +25,9 @@ export class PersonaComponent implements OnInit {
     persona.reducirAnios()
   }
 
+  borrarPersona(persona: Persona){
+    this.deletePersona.emit(persona)
+  }
+
+  
 }
