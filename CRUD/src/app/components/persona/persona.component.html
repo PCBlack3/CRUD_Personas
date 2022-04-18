@@ -1,0 +1,12 @@
+<div class="Persona">
+    <h6>Nueva Persona</h6>
+    <input type="text" [(ngModel)]="persona.nombre">
+    <p>Nombre: {{persona.nombre}}</p>
+    <input type="text" [(ngModel)]="persona.apellido">
+    <p>Apellido: {{persona.apellido}}</p>
+    <input type="text" [(ngModel)]="persona.edad">
+    <p>Edad: {{persona.edad}}</p>
+    <button class="btn btn-primary mb-3" (click)="festejo(persona)">Cumplir Años</button>
+    <button class="btn btn-primary mb-3" (click)="desfestejo(persona)">Reducir Años</button>
+</div>
+    
