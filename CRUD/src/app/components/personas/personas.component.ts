@@ -11,6 +11,10 @@ import { PersonaService } from 'src/app/services/persona.service';
 export class PersonasComponent implements OnInit {
 
   personas: Persona[] = []
+  selectedPersona : Persona = new Persona();
+  nombre: string = '';
+  apellido: string = '';
+  edad: number = 0;
 
   constructor(private personaService: PersonaService) { }
 
@@ -30,8 +34,12 @@ export class PersonasComponent implements OnInit {
     this.personas = this.personaService.removePersona(this.personas, personaParaBorrar)
   }
 
-  agregarPersonaALaLista(persona: Persona): Persona[] {
-   this.personas.push(new Persona("persona"))
-   return this.personas
+  agregarPersonaALaLista() {
+   const persona = new Persona();
+   persona.nombre = this.nombre;
+   persona.apellido = this.apellido;
+   persona.edad = this.edad;
+
+   this.personaService.agregarPersona(persona)
   }
 }

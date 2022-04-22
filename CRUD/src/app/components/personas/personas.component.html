@@ -4,7 +4,7 @@
     <div *ngFor="let persona of personas">
        <app-persona [persona] = "persona"
        (deletePersona)="borrarPersonaDeLista($event)"
-       (addPersona)="agregarPersonaALaLista($event)">
+       >
        </app-persona>
     </div>   
     
@@ -12,8 +12,9 @@
 
 <div class="agregador">
     <h3>Formulario de ingreso:</h3>
-    <input type="text"  placeholder="nombre: "  > <br>
-    <input type="text" placeholder="apellido: " > <br>
-    <input type="text" placeholder="edad: "   > <br>
-    <button class="btn btn-primary mb-3" (click)="agregarPersonaALaLista()">Agregar</button>
+    <input type="text"  placeholder="nombre: " [(ngModel)]="nombre" > <br>
+    <input type="text" placeholder="apellido: " [(ngModel)]="apellido"> <br>
+    <input type="text" placeholder="edad: "   [(ngModel)]="edad"> <br>
+    <button (click)="agregarPersonaALaLista()"class="btn btn-primary" >Agregar</button>
+    
 </div>

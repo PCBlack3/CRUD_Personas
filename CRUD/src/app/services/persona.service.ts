@@ -23,8 +23,10 @@ export class PersonaService {
     return listDePersonas.filter(p => p.nombre!== personaToDelete.nombre);
   }
 
-  agregarPersona(): Persona[] {
+  agregarPersona(persona: Persona){
+    this.personas.push(persona);
+  } 
     
-    return this.personas
-  }
+    
+  
 }
